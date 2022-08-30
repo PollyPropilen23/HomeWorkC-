@@ -1,5 +1,7 @@
-﻿/*
+﻿//------------------HomeWork003---------------------------
+
 // Задача 1. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+/*
 int FindPolindrom (int num)
 {   int polindrom = 0;
     while (num >= 10)
@@ -17,6 +19,39 @@ int num = Convert.ToInt32(Console.ReadLine());
 int res = FindPolindrom(num);
 
 if (num == res)
+Console.Write($"Число {num} полиндром");
+else
+Console.Write($"Число {num} не полиндром");
+*/
+
+
+// Второй способ через bool
+
+/*
+bool Polindrom(int num)
+{
+    int mem = num;
+    int backward = 0;
+
+    while (num >= 10)
+    {
+        backward = backward *10 + num % 10;
+        num = num/10;
+    }
+    backward = backward *10 + num;
+
+    if (mem == backward)
+    return true;
+    else
+    return false;
+}
+
+Console.Write("Введите пятизначное число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+bool res = Polindrom(num);
+
+if (res)
 Console.Write($"Число {num} полиндром");
 else
 Console.Write($"Число {num} не полиндром");
@@ -52,7 +87,7 @@ double zb = Convert.ToDouble(Console.ReadLine());
 
 double dist = Distance(xa,ya,za,xb,yb,zb);
 
-Console.Write("Расстоние от точки А до точки В равно " + dist);
+Console.Write($"Расстоние от точки А({xa}, {ya}, {za}) до точки В({xb}, {yb}, {zb}) равно " + dist);
 */
 
 /*
@@ -75,25 +110,3 @@ Cube(num);
 */
 
 
-// Классаная задача
-/*
-void chetvert (int nom)
-{
-    if (nom == 1)
-    Console.WriteLine("В первой четверти значения по оси абсцис и ординат больше нуля");
-    if (nom == 2)
-    Console.WriteLine("Во второй четверти значения по оси абсцис меньше нуля, по оси ординат больше нуля");
-    if (nom == 3)
-    Console.WriteLine("В третьей четверти значения по оси абсцис и ординат меньше нуля");
-    if (nom == 4)
-    Console.WriteLine("В четвертой четверти значения по оси абсцис больше нуля, а по оси ординат меньше нуля");
-    if (nom > 4 || nom < 1)
-    Console.WriteLine("Нет четверти, соответствующей введенному числу");
-
-}
-
-Console.Write("Введите номер четверти ");
-int nom = Convert.ToInt32(Console.ReadLine());
-
-chetvert(nom);
-*/
